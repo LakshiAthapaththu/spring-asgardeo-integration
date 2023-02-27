@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          asgardeo:
+            client-name: Login with the Asgardeo
+            client-id: <CLIENT_ID>
+            client-secret: <CLIENT_SECRET>
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:8080/login/oauth2/code/asgardeo"
+            scope: openid, profile
+            provider: asgardeo_provider
+        provider:
+          asgardeo_provider:
+            issuer-uri: https://api.asgardeo.io/t/lakshia/oauth2/token
